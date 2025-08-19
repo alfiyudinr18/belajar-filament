@@ -6,6 +6,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Repeater;
 
 class FakturForm
 {
@@ -18,6 +19,23 @@ class FakturForm
                 TextInput::make("kode_customer"),
                 Select::make("customer_id")
                     ->relationship('customer', 'nama_customer'),
+                Repeater::make('detail')
+                ->relationship()
+                ->schema([
+                    Select::make('barang_id')
+                    ->relationship('barang', 'nama_barang'),
+                    TextInput::make('diskon')
+                    ->numeric(),
+                    TextInput::make('nama_barang'),
+                    TextInput::make('harga')
+                    ->numeric(),
+                    TextInput::make('subtotal')
+                    ->numeric(),
+                    TextInput::make('qty')
+                    ->numeric(),
+                    TextInput::make('hasil_qty')
+                    ->numeric(),
+                ]),
                 TextInput::make("ket_faktur"),
                 TextInput::make("total"),
                 TextInput::make("nominal_charge"),
