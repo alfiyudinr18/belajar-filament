@@ -9,4 +9,7 @@ class Barang extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function detail(){
+        return $this->hasMany(Detail::class);
+    }
 }
