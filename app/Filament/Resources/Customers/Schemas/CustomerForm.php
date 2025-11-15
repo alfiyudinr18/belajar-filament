@@ -11,7 +11,7 @@ class CustomerForm
     {
         return $schema
             ->components([
-                TextInput::make('nama_custome')
+                TextInput::make('nama_customer')
                     ->required()
                     ->label('Nama')
                     ->placeholder('Masukan Nama Customer'),
