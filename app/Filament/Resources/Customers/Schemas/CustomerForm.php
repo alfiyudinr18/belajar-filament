@@ -13,7 +13,7 @@ class CustomerForm
             ->components([
                 TextInput::make('nama_customer')
                     ->required()
-                    ->label('Nama')
+                    ->label('Nama Customer')
                     ->placeholder('Masukan Nama Customer'),
                 TextInput::make('kode_customer')
                     ->required()

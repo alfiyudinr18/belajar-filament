@@ -11,9 +11,19 @@ class BarangForm
     {
         return $schema
             ->components([
-                TextInput::make('nama_barang'),
-                TextInput::make('kode_barang'),
-                TextInput::make('harga_barang'),
+                TextInput::make('nama_barang')
+                    ->required()
+                    ->label('Nama')
+                    ->placeholder('Masukan Nama Barang'),
+                TextInput::make('kode_barang')
+                    ->required()
+                    ->numeric()
+                    ->label('Kode')
+                    ->placeholder('Masukan Kode Barang'),
+                TextInput::make('harga_barang')
+                    ->required()
+                    ->label('Harga')
+                    ->placeholder('Masukan Harga'),
             ]);
     }
 }
